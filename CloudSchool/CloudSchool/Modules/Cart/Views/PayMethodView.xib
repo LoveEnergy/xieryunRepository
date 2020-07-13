@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PayMethodView" customModule="CloudSchool" customModuleProvider="target">
+            <connections>
+                <outlet property="aliPayButton" destination="FP7-lN-SpZ" id="lGl-wk-KWQ"/>
+                <outlet property="aliPayChooseButton" destination="qGr-9h-9bG" id="HED-dm-HFA"/>
+                <outlet property="moneyButton" destination="y5d-I3-dRo" id="9ad-H3-Q8d"/>
+                <outlet property="moneyChooseButton" destination="K3Z-Vj-DGU" id="Y9P-Uj-YsC"/>
+                <outlet property="moneyViewHeightConstraint" destination="zHT-aH-EXI" id="02k-yy-Kp0"/>
+                <outlet property="view" destination="iN0-l3-epB" id="AZh-Xr-s9s"/>
+                <outlet property="wechatButton" destination="bwI-0w-AEQ" id="xeI-YG-cv8"/>
+                <outlet property="wechatChooseButton" destination="Jaa-bX-kwT" id="7LO-3O-1ZX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="181"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="r59-7Y-Aho">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="181"/>
+                    <subviews>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ary-ti-zUh">
+                            <rect key="frame" x="0.0" y="-80" width="375" height="80"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallet_money_s" translatesAutoresizingMaskIntoConstraints="NO" id="ndQ-rZ-Xqz">
+                                    <rect key="frame" x="13" y="24" width="32" height="32"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="余额支付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCs-vI-Fg9">
+                                    <rect key="frame" x="60" y="31" width="61.5" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5d-I3-dRo">
+                                    <rect key="frame" x="336" y="27" width="26" height="26"/>
+                                    <state key="normal" image="wallet_choose_n"/>
+                                    <state key="selected" image="wallet_choose_s"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3Z-Vj-DGU">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skI-jL-VAI">
+                                    <rect key="frame" x="60" y="79" width="315" height="1"/>
+                                    <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="9JG-so-lZJ"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="ndQ-rZ-Xqz" firstAttribute="leading" secondItem="ary-ti-zUh" secondAttribute="leading" constant="13" id="0iM-P6-2ER"/>
+                                <constraint firstItem="ndQ-rZ-Xqz" firstAttribute="centerY" secondItem="ary-ti-zUh" secondAttribute="centerY" id="2LQ-ol-AdR"/>
+                                <constraint firstItem="y5d-I3-dRo" firstAttribute="centerY" secondItem="ary-ti-zUh" secondAttribute="centerY" id="DqY-TC-3ic"/>
+                                <constraint firstItem="K3Z-Vj-DGU" firstAttribute="leading" secondItem="ary-ti-zUh" secondAttribute="leading" id="NPd-xm-QHc"/>
+                                <constraint firstAttribute="bottom" secondItem="skI-jL-VAI" secondAttribute="bottom" id="Nbt-Xe-qCM"/>
+                                <constraint firstItem="nCs-vI-Fg9" firstAttribute="leading" secondItem="ndQ-rZ-Xqz" secondAttribute="trailing" constant="15" id="XTg-gY-Cw9"/>
+                                <constraint firstAttribute="bottom" secondItem="K3Z-Vj-DGU" secondAttribute="bottom" id="ajE-xy-fkT"/>
+                                <constraint firstAttribute="trailing" secondItem="K3Z-Vj-DGU" secondAttribute="trailing" id="cPK-A5-dLd"/>
+                                <constraint firstItem="nCs-vI-Fg9" firstAttribute="centerY" secondItem="ndQ-rZ-Xqz" secondAttribute="centerY" id="djf-nz-g4V"/>
+                                <constraint firstAttribute="trailing" secondItem="skI-jL-VAI" secondAttribute="trailing" id="e7W-mG-QvH"/>
+                                <constraint firstAttribute="trailing" secondItem="y5d-I3-dRo" secondAttribute="trailing" constant="13" id="uCE-aL-9Ot"/>
+                                <constraint firstItem="skI-jL-VAI" firstAttribute="leading" secondItem="nCs-vI-Fg9" secondAttribute="leading" id="yZC-Lc-8oG"/>
+                                <constraint firstAttribute="height" constant="80" id="zHT-aH-EXI"/>
+                                <constraint firstItem="K3Z-Vj-DGU" firstAttribute="top" secondItem="ary-ti-zUh" secondAttribute="top" id="zNx-zr-A7w"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PtY-ot-9jJ">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="90.5"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallet_wechat" translatesAutoresizingMaskIntoConstraints="NO" id="LjI-xp-D95">
+                                    <rect key="frame" x="13" y="30.5" width="30" height="30"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信支付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zim-9K-ExG">
+                                    <rect key="frame" x="58" y="27.5" width="61.5" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="推荐安装微信5.0及以上版本使用" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHa-Kj-PJo">
+                                    <rect key="frame" x="58" y="53.5" width="177" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                    <color key="textColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwI-0w-AEQ">
+                                    <rect key="frame" x="336" y="32.5" width="26" height="26"/>
+                                    <state key="normal" image="wallet_choose_n"/>
+                                    <state key="selected" image="wallet_choose_s"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jaa-bX-kwT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90.5"/>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ET0-pT-bpI">
+                                    <rect key="frame" x="58" y="89.5" width="317" height="1"/>
+                                    <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="hXC-aA-WRJ"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="zim-9K-ExG" firstAttribute="leading" secondItem="LjI-xp-D95" secondAttribute="trailing" constant="15" id="5nQ-gy-Yxm"/>
+                                <constraint firstItem="Jaa-bX-kwT" firstAttribute="top" secondItem="PtY-ot-9jJ" secondAttribute="top" id="6eH-eB-1TV"/>
+                                <constraint firstItem="LjI-xp-D95" firstAttribute="centerY" secondItem="PtY-ot-9jJ" secondAttribute="centerY" id="9Ir-gY-K4f"/>
+                                <constraint firstItem="Jaa-bX-kwT" firstAttribute="leading" secondItem="PtY-ot-9jJ" secondAttribute="leading" id="C33-Ze-Ba4"/>
+                                <constraint firstAttribute="bottom" secondItem="ET0-pT-bpI" secondAttribute="bottom" id="DrF-3Y-KLv"/>
+                                <constraint firstAttribute="bottom" secondItem="Jaa-bX-kwT" secondAttribute="bottom" id="Dw7-Dr-gYF"/>
+                                <constraint firstItem="zim-9K-ExG" firstAttribute="bottom" secondItem="LjI-xp-D95" secondAttribute="centerY" id="Dzc-dS-8zJ"/>
+                                <constraint firstAttribute="trailing" secondItem="ET0-pT-bpI" secondAttribute="trailing" id="Ehh-cN-gRu"/>
+                                <constraint firstItem="LjI-xp-D95" firstAttribute="leading" secondItem="PtY-ot-9jJ" secondAttribute="leading" constant="13" id="Isw-vZ-0Yb"/>
+                                <constraint firstItem="gHa-Kj-PJo" firstAttribute="leading" secondItem="zim-9K-ExG" secondAttribute="leading" id="OUx-bY-XIA"/>
+                                <constraint firstItem="ET0-pT-bpI" firstAttribute="leading" secondItem="gHa-Kj-PJo" secondAttribute="leading" id="RoT-5U-4P7"/>
+                                <constraint firstItem="gHa-Kj-PJo" firstAttribute="top" secondItem="zim-9K-ExG" secondAttribute="bottom" constant="8" id="ZBG-0J-99Z"/>
+                                <constraint firstAttribute="trailing" secondItem="bwI-0w-AEQ" secondAttribute="trailing" constant="13" id="jmw-LQ-FEz"/>
+                                <constraint firstItem="bwI-0w-AEQ" firstAttribute="centerY" secondItem="PtY-ot-9jJ" secondAttribute="centerY" id="l5w-I3-ET3"/>
+                                <constraint firstAttribute="trailing" secondItem="Jaa-bX-kwT" secondAttribute="trailing" id="pxZ-sT-dlZ"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4l-kL-AUJ">
+                            <rect key="frame" x="0.0" y="90.5" width="375" height="90.5"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallet_ali" translatesAutoresizingMaskIntoConstraints="NO" id="VX7-tq-REu">
+                                    <rect key="frame" x="13" y="30.5" width="30" height="30"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付宝支付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofc-4b-6E1">
+                                    <rect key="frame" x="58" y="36.5" width="76.5" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FP7-lN-SpZ">
+                                    <rect key="frame" x="336" y="32.5" width="26" height="26"/>
+                                    <state key="normal" image="wallet_choose_n"/>
+                                    <state key="selected" image="wallet_choose_s"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGr-9h-9bG">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90.5"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="FP7-lN-SpZ" firstAttribute="centerY" secondItem="B4l-kL-AUJ" secondAttribute="centerY" id="0vt-eU-7R6"/>
+                                <constraint firstItem="ofc-4b-6E1" firstAttribute="centerY" secondItem="VX7-tq-REu" secondAttribute="centerY" id="3M8-hH-mPi"/>
+                                <constraint firstAttribute="bottom" secondItem="qGr-9h-9bG" secondAttribute="bottom" id="6Yc-rL-Xud"/>
+                                <constraint firstItem="ofc-4b-6E1" firstAttribute="leading" secondItem="VX7-tq-REu" secondAttribute="trailing" constant="15" id="8Iu-tk-him"/>
+                                <constraint firstItem="qGr-9h-9bG" firstAttribute="top" secondItem="B4l-kL-AUJ" secondAttribute="top" id="RtK-dj-1RU"/>
+                                <constraint firstItem="VX7-tq-REu" firstAttribute="centerY" secondItem="B4l-kL-AUJ" secondAttribute="centerY" id="gDX-80-wUk"/>
+                                <constraint firstAttribute="trailing" secondItem="qGr-9h-9bG" secondAttribute="trailing" id="lj8-m6-uQL"/>
+                                <constraint firstItem="qGr-9h-9bG" firstAttribute="leading" secondItem="B4l-kL-AUJ" secondAttribute="leading" id="m7O-yT-fR8"/>
+                                <constraint firstAttribute="trailing" secondItem="FP7-lN-SpZ" secondAttribute="trailing" constant="13" id="n5w-mY-KNi"/>
+                                <constraint firstItem="VX7-tq-REu" firstAttribute="leading" secondItem="B4l-kL-AUJ" secondAttribute="leading" constant="13" id="pi9-m5-Pko"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="r59-7Y-Aho" secondAttribute="bottom" id="4y0-Ry-7Fs"/>
+                <constraint firstItem="r59-7Y-Aho" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Hx6-fP-rlj"/>
+                <constraint firstItem="r59-7Y-Aho" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="dLQ-3i-MbU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="r59-7Y-Aho" secondAttribute="trailing" id="e8R-Uu-afU"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="3"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                    <real key="value" value="1"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                    <color key="value" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="32.799999999999997" y="-171.36431784107947"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="wallet_ali" width="30" height="30"/>
+        <image name="wallet_choose_n" width="26" height="26"/>
+        <image name="wallet_choose_s" width="26" height="26"/>
+        <image name="wallet_money_s" width="32" height="32"/>
+        <image name="wallet_wechat" width="30" height="30"/>
+    </resources>
+</document>

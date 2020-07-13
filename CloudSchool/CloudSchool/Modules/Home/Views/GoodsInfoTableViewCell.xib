@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoodsInfoTableViewCell" rowHeight="216" id="KGk-i7-Jjw" customClass="GoodsInfoTableViewCell" customModule="CloudSchool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥321.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="InF-xl-Chl">
+                        <rect key="frame" x="13" y="15" width="71" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                        <color key="textColor" red="1" green="0.36470588235294116" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Mr6-wM-GZL">
+                        <rect key="frame" x="13" y="35.5" width="294" height="135.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJG-yz-Jak">
+                                <rect key="frame" x="0.0" y="0.0" width="294" height="69"/>
+                                <subviews>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3p-X3-gfF">
+                                        <rect key="frame" x="0.0" y="10" width="53" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="3" maxX="5" maxY="3"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JB-IO-uDH" customClass="LayoutableButton" customModule="CloudSchool" customModuleProvider="target">
+                                        <rect key="frame" x="234" y="-3.5" width="60" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="9wG-lO-lOu"/>
+                                            <constraint firstAttribute="width" constant="60" id="Z2g-rM-rSP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" image="share_wallet"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_layoutType" value="top"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="imageTitleSpace">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWG-gj-ZcD">
+                                        <rect key="frame" x="0.0" y="41" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="MWG-gj-ZcD" firstAttribute="top" secondItem="D3p-X3-gfF" secondAttribute="bottom" constant="8" id="3ba-wd-plR"/>
+                                    <constraint firstItem="MWG-gj-ZcD" firstAttribute="leading" secondItem="D3p-X3-gfF" secondAttribute="leading" id="ETg-qM-lw7"/>
+                                    <constraint firstAttribute="trailing" secondItem="9JB-IO-uDH" secondAttribute="trailing" id="HfD-1Y-uCG"/>
+                                    <constraint firstItem="D3p-X3-gfF" firstAttribute="top" secondItem="sJG-yz-Jak" secondAttribute="top" constant="10" id="N2q-qW-E8p"/>
+                                    <constraint firstAttribute="height" constant="69" id="ZuH-wS-sEO"/>
+                                    <constraint firstItem="9JB-IO-uDH" firstAttribute="centerY" secondItem="D3p-X3-gfF" secondAttribute="centerY" id="bta-79-Ekw"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MWG-gj-ZcD" secondAttribute="bottom" constant="10" id="uKo-2F-Onn"/>
+                                    <constraint firstItem="D3p-X3-gfF" firstAttribute="leading" secondItem="sJG-yz-Jak" secondAttribute="leading" id="uc4-Ww-oS2"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MWG-gj-ZcD" secondAttribute="trailing" constant="15" id="xJ0-aI-QCy"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="《污染防治可行技术指南》解读" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMD-4M-IKg">
+                                <rect key="frame" x="0.0" y="74" width="294" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="体系：环境现场执法" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96T-No-whW">
+                                <rect key="frame" x="0.0" y="98.5" width="294" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="授课教师：高教授" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUe-e4-TUP">
+                                <rect key="frame" x="0.0" y="119.5" width="294" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="4NQ-wT-LpP">
+                        <rect key="frame" x="13" y="181" width="164.5" height="30"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7X-xb-6q5">
+                                <rect key="frame" x="0.0" y="0.0" width="64" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <inset key="imageEdgeInsets" minX="-2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="100人购买" image="course_buyNumber">
+                                    <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhT-k1-BvZ">
+                                <rect key="frame" x="99" y="0.0" width="65.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <inset key="imageEdgeInsets" minX="-2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="100人购买" image="goodsdetail_like">
+                                    <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="2gw-sZ-SGJ"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="InF-xl-Chl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="5WG-SI-1RX"/>
+                    <constraint firstItem="Mr6-wM-GZL" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Rga-sM-VDZ"/>
+                    <constraint firstItem="InF-xl-Chl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="S70-ZK-vzA"/>
+                    <constraint firstItem="Mr6-wM-GZL" firstAttribute="top" secondItem="InF-xl-Chl" secondAttribute="bottom" id="b9Q-3T-0ml"/>
+                    <constraint firstItem="Mr6-wM-GZL" firstAttribute="leading" secondItem="InF-xl-Chl" secondAttribute="leading" id="cgz-HG-ekx"/>
+                    <constraint firstItem="4NQ-wT-LpP" firstAttribute="top" secondItem="Mr6-wM-GZL" secondAttribute="bottom" constant="10" id="dEX-SF-SBk"/>
+                    <constraint firstItem="4NQ-wT-LpP" firstAttribute="leading" secondItem="Mr6-wM-GZL" secondAttribute="leading" id="wfz-cb-QSe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="buyNumberButton" destination="z7X-xb-6q5" id="rvY-Dw-kWp"/>
+                <outlet property="likeButton" destination="VhT-k1-BvZ" id="yZ6-KG-msO"/>
+                <outlet property="nameLabel" destination="ZMD-4M-IKg" id="IUv-Fl-fp0"/>
+                <outlet property="priceLabel" destination="InF-xl-Chl" id="A4Y-94-IsR"/>
+                <outlet property="rewardButton" destination="9JB-IO-uDH" id="RdQ-Gp-bWS"/>
+                <outlet property="seriesLabel" destination="96T-No-whW" id="EgK-zc-3c5"/>
+                <outlet property="shareView" destination="sJG-yz-Jak" id="Y3J-Cr-kyd"/>
+                <outlet property="teacherLabel" destination="MUe-e4-TUP" id="dFm-RG-FWq"/>
+                <outlet property="timeLabel" destination="MWG-gj-ZcD" id="cd7-5q-rMn"/>
+                <outlet property="titleButton" destination="D3p-X3-gfF" id="4om-kO-xXY"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="188.90554722638683"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="course_buyNumber" width="11" height="9"/>
+        <image name="goodsdetail_like" width="12.5" height="9.5"/>
+        <image name="share_wallet" width="20" height="20"/>
+    </resources>
+</document>

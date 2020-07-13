@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudyTableViewCell" rowHeight="133" id="KGk-i7-Jjw" customClass="StudyTableViewCell" customModule="CloudSchool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="409" height="133"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="409" height="133"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="y5L-LD-0WL">
+                        <rect key="frame" x="16" y="12" width="124" height="97.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="124" id="EKk-IF-ZJ2"/>
+                            <constraint firstAttribute="width" secondItem="y5L-LD-0WL" secondAttribute="height" multiplier="120:94" id="k1e-2k-ior"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="环境行政执法中的证据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phT-gy-XAD">
+                        <rect key="frame" x="148" y="12" width="153" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="结课时间:2018-10-01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRL-em-Jjz">
+                        <rect key="frame" x="148" y="40" width="127.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学习进度: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgf-Ke-fc1">
+                        <rect key="frame" x="148" y="56" width="60.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTM-bK-CQE">
+                        <rect key="frame" x="218.5" y="77.5" width="60" height="25"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                        <state key="normal" title="申请延期">
+                            <color key="titleColor" red="1" green="0.36470588235294116" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="pcornerRadius">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="pborderColor">
+                                <color key="value" red="1" green="0.36470588240000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="pborderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="剩余时间: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgY-q6-1FD">
+                        <rect key="frame" x="148" y="82" width="60.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRj-9A-juO">
+                        <rect key="frame" x="371.5" y="56" width="27.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.1215686275" green="0.63529411759999999" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="snt-aA-Zgf">
+                        <rect key="frame" x="225.5" y="59" width="136" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="H3M-77-T0q"/>
+                        </constraints>
+                        <color key="progressTintColor" red="0.1215686275" green="0.63529411759999999" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="trackTintColor" red="0.1215686275" green="0.63529411759999999" blue="0.97254901959999995" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="pcornerRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="pborderColor">
+                                <color key="value" red="0.1215686275" green="0.63529411759999999" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="pborderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </progressView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="snt-aA-Zgf" firstAttribute="leading" secondItem="qgf-Ke-fc1" secondAttribute="trailing" constant="17" id="7Vy-ZJ-5i6"/>
+                    <constraint firstItem="JgY-q6-1FD" firstAttribute="leading" secondItem="qgf-Ke-fc1" secondAttribute="leading" id="8Jn-Yb-azE"/>
+                    <constraint firstItem="cRL-em-Jjz" firstAttribute="leading" secondItem="phT-gy-XAD" secondAttribute="leading" id="9go-np-tnf"/>
+                    <constraint firstItem="qgf-Ke-fc1" firstAttribute="top" secondItem="cRL-em-Jjz" secondAttribute="bottom" id="A3e-gV-OON"/>
+                    <constraint firstItem="pTM-bK-CQE" firstAttribute="leading" secondItem="JgY-q6-1FD" secondAttribute="trailing" constant="10" id="BK7-qh-x2n"/>
+                    <constraint firstItem="phT-gy-XAD" firstAttribute="leading" secondItem="y5L-LD-0WL" secondAttribute="trailing" constant="8" id="I3D-Br-SBp"/>
+                    <constraint firstItem="JgY-q6-1FD" firstAttribute="top" secondItem="qgf-Ke-fc1" secondAttribute="bottom" constant="10" id="Ocg-Wu-MXo"/>
+                    <constraint firstAttribute="trailing" secondItem="YRj-9A-juO" secondAttribute="trailing" constant="10" id="PEe-Bb-c8d"/>
+                    <constraint firstItem="phT-gy-XAD" firstAttribute="top" secondItem="y5L-LD-0WL" secondAttribute="top" id="Pku-fn-yD3"/>
+                    <constraint firstItem="snt-aA-Zgf" firstAttribute="centerY" secondItem="qgf-Ke-fc1" secondAttribute="centerY" id="R0U-Tt-zng"/>
+                    <constraint firstItem="cRL-em-Jjz" firstAttribute="top" secondItem="phT-gy-XAD" secondAttribute="bottom" constant="10" id="RhM-39-h9k"/>
+                    <constraint firstItem="y5L-LD-0WL" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.8" id="SC9-qc-GEH"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="JgY-q6-1FD" secondAttribute="bottom" constant="10" id="WRE-4C-Bg3"/>
+                    <constraint firstItem="y5L-LD-0WL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bpk-Uz-0Su"/>
+                    <constraint firstItem="pTM-bK-CQE" firstAttribute="centerY" secondItem="JgY-q6-1FD" secondAttribute="centerY" id="ciI-cM-7DG"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="phT-gy-XAD" secondAttribute="trailing" constant="10" id="iLJ-qw-8BY"/>
+                    <constraint firstItem="YRj-9A-juO" firstAttribute="leading" secondItem="snt-aA-Zgf" secondAttribute="trailing" constant="10" id="jed-jX-I2q"/>
+                    <constraint firstItem="YRj-9A-juO" firstAttribute="centerY" secondItem="snt-aA-Zgf" secondAttribute="centerY" id="wOM-j5-GCF"/>
+                    <constraint firstItem="qgf-Ke-fc1" firstAttribute="leading" secondItem="cRL-em-Jjz" secondAttribute="leading" id="yN6-f1-L2O"/>
+                    <constraint firstItem="y5L-LD-0WL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="zhf-rj-DvR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="applyButton" destination="pTM-bK-CQE" id="4fg-Or-Gdm"/>
+                <outlet property="endTimeLabel" destination="cRL-em-Jjz" id="K9N-tH-ZO9"/>
+                <outlet property="nameLabel" destination="phT-gy-XAD" id="p5b-gA-5A7"/>
+                <outlet property="progressLabel" destination="YRj-9A-juO" id="5qk-if-3mK"/>
+                <outlet property="progressTitleLabel" destination="qgf-Ke-fc1" id="jSp-3J-czu"/>
+                <outlet property="progressView" destination="snt-aA-Zgf" id="4Ps-Bc-Lp2"/>
+                <outlet property="restTimeLabel" destination="JgY-q6-1FD" id="cpt-Kn-TQh"/>
+                <outlet property="thumbImageView" destination="y5L-LD-0WL" id="RxX-ee-qGg"/>
+            </connections>
+            <point key="canvasLocation" x="208.80000000000001" y="187.55622188905548"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="default_image" width="124" height="70"/>
+    </resources>
+</document>

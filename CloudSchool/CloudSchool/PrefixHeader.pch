@@ -1,0 +1,19 @@
+//
+//  PrefixHeader.pch
+//  CloudSchool
+//
+//  Created by ENERGY on 2020/2/14.
+//  Copyright © 2020 CEI. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#endif

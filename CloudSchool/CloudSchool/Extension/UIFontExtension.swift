@@ -1,0 +1,75 @@
+//
+//  UIFontExtension.swift
+//  AsteroidVPN-iOS
+//
+//  Created by Asteroid on 2018/1/8.
+//  Copyright © 2018年 Asteroid. All rights reserved.
+//
+
+//
+//  UIFont+SFUI.swift
+//  Asteroid
+//
+//  Created by Maynard on 2017/5/5.
+//  Copyright © 2017年 Asteroid. All rights reserved.
+//
+
+import UIKit
+import Ruler
+
+extension UIFont {
+    
+    enum FontStyle: String {
+        case regular = "Regular"
+        case medium = "Medium"
+        case light = "Light"
+        case bold = "Bold"
+        case semibold = "Semibold"
+        case none = ""
+    }
+    
+    enum RobotoFontStyle: String {
+        case regular = "Regular"
+        case medium = "Medium"
+        case light = "Light"
+        case mediumItalic = "MediumItalic"
+        case bold = "Bold"
+        case boldCondensed = "BoldCondensed"
+        case boldCondensedItalic = "BoldCondensedItalic"
+        case condensed = "Condensed"
+        case thinItalic = "ThinItalic"
+        case boldItalic = "BoldItalic"
+        case lightItalic = "LightItalic"
+        case condensedItalic = "condensedItalic"
+        case italic = "Italic"
+        case blackItalic = "BlackItalic"
+        case thin = "Thin"
+        case black = "Black"
+    }
+    
+    enum Classify: String {
+        case text = "Text"
+        case display = "Display"
+    }
+    
+    struct SF {
+        static func font(style: FontStyle, size: CGFloat) -> UIFont {
+            return UIFont(name: ".SFUIDisplay-\(style.rawValue)", size: size) ?? UIFont.systemFont(ofSize: size)
+        }
+        static func font(classify: Classify, size: CGFloat) -> UIFont {
+            return UIFont(name: ".SFUI\(classify.rawValue)-Regular", size: size) ?? UIFont.systemFont(ofSize: size)
+        }
+        
+        static func font(classify: Classify, style: FontStyle, size: CGFloat) -> UIFont {
+            return UIFont(name: ".SFUI\(classify.rawValue)-\(style.rawValue)", size: size) ?? UIFont.systemFont(ofSize: size)
+        }
+    }
+    
+    struct Roboto {
+        static func font(style: RobotoFontStyle, size: CGFloat) -> UIFont? {
+            return UIFont(name: "Roboto-\(style.rawValue)", size: size)
+        }
+    }
+    
+}
+

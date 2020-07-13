@@ -1,0 +1,74 @@
+# Uncomment the next line to define a global platform for your project
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+ platform :ios, '10.0'
+
+target 'CloudSchool' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+  pod 'RxSwift'
+  pod 'SnapKit'
+  pod 'RxCocoa'
+  pod 'R.swift'
+  pod 'RxDataSources'
+  pod 'Moya/RxSwift'
+  pod 'ObjectMapper'
+  pod 'Ruler'
+  pod 'FSPagerView'
+#  pod 'WechatOpenSDK'
+  pod 'IQKeyboardManagerSwift'
+  pod 'pop'
+  pod 'RxGesture'
+  pod 'UITableView+FDTemplateLayoutCell'
+  pod 'Kingfisher'
+  pod 'SwipeCellKit'
+  pod 'DZNEmptyDataSet'
+  pod 'MJRefresh', '~>3.1.0'
+  #一个Swift原生扩展包。
+  pod 'SwifterSwift', '~> 4.5.0'
+  pod 'FSCalendar'
+  pod 'BetterSegmentedControl'
+  pod 'Segmentio'
+  pod 'MZDownloadManager'
+  pod 'ZFPlayer', '3.1.8'
+  pod 'ZFPlayer/AVPlayer', '3.1.8'
+  pod 'ZFPlayer/ControlView', '3.1.8'
+  pod 'Tiercel', '~> 1.2.3'
+  pod 'TTGTagCollectionView'
+  pod 'AFNetworking'
+  pod 'YYModel'
+  pod 'Chrysan', :git => 'https://github.com/Harley-xk/Chrysan.git'
+  pod 'QMUIKit'
+  pod 'UMCCommon'
+  pod 'SwiftyStoreKit'
+  pod 'SwiftyJSON'
+  pod 'PKHUD', '~> 5.2.1'
+#  pod 'Reveal-SDK', :configurations => ['Debug']
+  pod 'TTTAttributedLabel'
+#  pod 'ZFPlayer/ControlView'
+  # Pods for CloudSchool
+  
+  # 主模块(必须)
+  pod 'mob_sharesdk'
+  
+  # UI模块(非必须，需要用到ShareSDK提供的分享菜单栏和分享编辑页面需要以下1行)
+  pod 'mob_sharesdk/ShareSDKUI'
+  
+  # 平台SDK模块(对照一下平台，需要的加上。如果只需要QQ、微信、新浪微博，只需要以下3行)
+  pod 'mob_sharesdk/ShareSDKPlatforms/QQ'
+  pod 'mob_sharesdk/ShareSDKPlatforms/SinaWeibo'
+  pod 'mob_sharesdk/ShareSDKPlatforms/WeChatFull'
+#  pod 'mob_sharesdk/ShareSDKPlatforms/WeChat'
+
+#  pod 'AlivcLivePusherWithPlayer'
+pod 'LFLiveKit'
+#pod 'EaseUILite', :git =>'https://github.com/easemob/easeui-ios-hyphenate-cocoapods.git'
+pod 'MBProgressHUD', '~> 0.9'
+pod 'MWPhotoBrowser', '~> 2.1.1'
+pod 'SDWebImage','~> 3.7'
+pod 'DACircularProgress','~> 2.3'
+pod 'StreamingKit'
+pod 'HXPhotoPicker'
+pod 'UMCAnalytics'
+pod 'UMCPush'
+pod 'UMCCommonLog'
+end

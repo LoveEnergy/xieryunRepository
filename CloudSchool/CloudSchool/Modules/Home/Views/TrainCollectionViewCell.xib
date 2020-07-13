@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TrainCollectionViewCell" id="gTV-IL-0wX" customClass="TrainCollectionViewCell" customModule="CloudSchool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="107" height="106"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="107" height="106"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="ELs-k9-Qwi">
+                        <rect key="frame" x="0.0" y="0.0" width="107" height="106"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="pcornerRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="getGroup" translatesAutoresizingMaskIntoConstraints="NO" id="XNc-FM-FUm">
+                        <rect key="frame" x="-8" y="0.0" width="70" height="60"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zC2-FD-X1M">
+                        <rect key="frame" x="67" y="66" width="40" height="40"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="8ua-tv-yvf"/>
+                            <constraint firstAttribute="width" constant="40" id="c8l-BR-k8Z"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="zC2-FD-X1M" firstAttribute="trailing" secondItem="gTV-IL-0wX" secondAttribute="trailing" id="3Q2-Fs-wU2"/>
+                <constraint firstItem="zC2-FD-X1M" firstAttribute="bottom" secondItem="gTV-IL-0wX" secondAttribute="bottom" id="Od1-4E-Wzf"/>
+                <constraint firstItem="ELs-k9-Qwi" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="abJ-Xg-VCm"/>
+                <constraint firstItem="ELs-k9-Qwi" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="cVA-yZ-hpT"/>
+                <constraint firstItem="ELs-k9-Qwi" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="wfX-aR-Dur"/>
+                <constraint firstItem="ELs-k9-Qwi" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="xnB-2e-Eau"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="107" height="106"/>
+            <connections>
+                <outlet property="getGroupImageView" destination="XNc-FM-FUm" id="Kq0-k8-DFk"/>
+                <outlet property="thumbImageView" destination="ELs-k9-Qwi" id="jsj-4V-q2c"/>
+                <outlet property="typeSignImg" destination="zC2-FD-X1M" id="jxY-DP-cpO"/>
+            </connections>
+            <point key="canvasLocation" x="183.19999999999999" y="152.02398800599701"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="default_image" width="124" height="70"/>
+        <image name="getGroup" width="60" height="63.5"/>
+    </resources>
+</document>

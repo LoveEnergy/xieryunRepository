@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "goodsdetail__vip_sign.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "goodsdetail__vip_sign@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "goodsdetail__vip_sign@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

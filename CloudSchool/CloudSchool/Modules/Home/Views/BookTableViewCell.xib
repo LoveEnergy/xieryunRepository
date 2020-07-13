@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookTableViewCell" rowHeight="125" id="1uM-su-bqK" customClass="BookTableViewCell" customModule="CloudSchool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="125"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1uM-su-bqK" id="4IW-ni-ksx">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="125"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="ZAf-YF-3oT">
+                        <rect key="frame" x="12" y="12.5" width="124" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="124" id="CqG-tq-IIZ"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3b5-NB-UFB">
+                        <rect key="frame" x="96" y="72.5" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="EUR-Nr-vMh"/>
+                            <constraint firstAttribute="height" constant="40" id="qj3-Vm-FPC"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSq-0N-QgF">
+                        <rect key="frame" x="145" y="12.5" width="37.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LX7-aP-zer">
+                        <rect key="frame" x="145" y="82.5" width="30" height="30"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <state key="normal" title="000">
+                            <color key="titleColor" red="1" green="0.36470588240000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xh-cF-yga">
+                        <rect key="frame" x="200" y="90.5" width="100" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="yta-uM-fsJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="000" image="course_buyNumber">
+                            <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ZAf-YF-3oT" firstAttribute="centerY" secondItem="4IW-ni-ksx" secondAttribute="centerY" id="5Kt-9v-PeE"/>
+                    <constraint firstItem="sSq-0N-QgF" firstAttribute="leading" secondItem="ZAf-YF-3oT" secondAttribute="trailing" constant="9" id="DWI-xp-5jt"/>
+                    <constraint firstItem="8Xh-cF-yga" firstAttribute="centerY" secondItem="LX7-aP-zer" secondAttribute="centerY" id="Y6L-hY-YHy"/>
+                    <constraint firstItem="LX7-aP-zer" firstAttribute="bottom" secondItem="ZAf-YF-3oT" secondAttribute="bottom" id="Yh1-y5-LJh"/>
+                    <constraint firstItem="3b5-NB-UFB" firstAttribute="trailing" secondItem="ZAf-YF-3oT" secondAttribute="trailing" id="ak8-KY-3nL"/>
+                    <constraint firstItem="3b5-NB-UFB" firstAttribute="bottom" secondItem="ZAf-YF-3oT" secondAttribute="bottom" id="fTK-TS-d3s"/>
+                    <constraint firstItem="ZAf-YF-3oT" firstAttribute="leading" secondItem="4IW-ni-ksx" secondAttribute="leading" constant="12" id="gVM-6q-FKK"/>
+                    <constraint firstItem="ZAf-YF-3oT" firstAttribute="height" secondItem="4IW-ni-ksx" secondAttribute="height" multiplier="0.8" id="hjB-XP-yYa"/>
+                    <constraint firstItem="8Xh-cF-yga" firstAttribute="leading" secondItem="LX7-aP-zer" secondAttribute="trailing" constant="25" id="kaA-ca-oZZ"/>
+                    <constraint firstItem="LX7-aP-zer" firstAttribute="leading" secondItem="ZAf-YF-3oT" secondAttribute="trailing" constant="9" id="pdb-Mc-M9v"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sSq-0N-QgF" secondAttribute="trailing" constant="12" id="sti-tx-uQo"/>
+                    <constraint firstItem="sSq-0N-QgF" firstAttribute="top" secondItem="ZAf-YF-3oT" secondAttribute="top" id="uN7-Oy-kzm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="2TM-nu-MOA"/>
+            <inset key="separatorInset" minX="146" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="iconImageView" destination="ZAf-YF-3oT" id="6ZZ-Eg-gqm"/>
+                <outlet property="nameLabel" destination="sSq-0N-QgF" id="RIO-6r-TSs"/>
+                <outlet property="numberButton" destination="8Xh-cF-yga" id="jhG-kr-3xQ"/>
+                <outlet property="priceButton" destination="LX7-aP-zer" id="JF7-C2-yk4"/>
+                <outlet property="productTypeImgView" destination="3b5-NB-UFB" id="9I3-3Y-W0X"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="182.15892053973016"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="course_buyNumber" width="11" height="9"/>
+        <image name="default_image" width="124" height="70"/>
+    </resources>
+</document>
