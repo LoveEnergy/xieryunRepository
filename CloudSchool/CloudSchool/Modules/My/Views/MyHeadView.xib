@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -15,6 +15,7 @@
                 <outlet property="myVIPSign" destination="I5T-cC-Dcf" id="fw4-tj-bZh"/>
                 <outlet property="nickNameLabel" destination="uCd-M4-WrA" id="t7j-cX-neH"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Az7-YC-1RM"/>
+                <outlet property="vipBtn" destination="cCT-gb-cFu" id="gGf-qT-lXv"/>
                 <outlet property="yellowBGView" destination="SXt-ce-1zs" id="7Ne-R8-Gcp"/>
             </connections>
         </placeholder>
@@ -63,9 +64,15 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCT-gb-cFu">
+                    <rect key="frame" x="164" y="131" width="46" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="cCT-gb-cFu" firstAttribute="top" secondItem="SXt-ce-1zs" secondAttribute="top" id="0yR-Xd-Lg8"/>
+                <constraint firstItem="cCT-gb-cFu" firstAttribute="trailing" secondItem="SXt-ce-1zs" secondAttribute="trailing" id="2uR-q0-cuH"/>
                 <constraint firstItem="I5T-cC-Dcf" firstAttribute="leading" secondItem="uCd-M4-WrA" secondAttribute="trailing" constant="3" id="4IV-Ge-cLn"/>
                 <constraint firstItem="qM4-pf-yfo" firstAttribute="leading" secondItem="11b-k2-Wwe" secondAttribute="trailing" constant="10" id="4Ye-Dn-je0"/>
                 <constraint firstItem="uCd-M4-WrA" firstAttribute="leading" secondItem="11b-k2-Wwe" secondAttribute="trailing" constant="10" id="AXj-bp-NV2"/>
@@ -77,8 +84,10 @@
                 <constraint firstItem="GFT-vg-kC6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ejG-Yo-KfU"/>
                 <constraint firstItem="11b-k2-Wwe" firstAttribute="top" secondItem="GFT-vg-kC6" secondAttribute="top" constant="15" id="f8y-YJ-fvy"/>
                 <constraint firstItem="I5T-cC-Dcf" firstAttribute="centerY" secondItem="uCd-M4-WrA" secondAttribute="centerY" id="fJd-dm-7Vx"/>
+                <constraint firstItem="cCT-gb-cFu" firstAttribute="bottom" secondItem="SXt-ce-1zs" secondAttribute="bottom" id="fzx-y6-f0H"/>
                 <constraint firstItem="GFT-vg-kC6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="okp-9y-Ov1"/>
                 <constraint firstItem="SXt-ce-1zs" firstAttribute="leading" secondItem="GFT-vg-kC6" secondAttribute="leading" constant="10" id="ouG-Fc-WSH"/>
+                <constraint firstItem="cCT-gb-cFu" firstAttribute="leading" secondItem="SXt-ce-1zs" secondAttribute="leading" id="pVP-eK-xOP"/>
                 <constraint firstItem="SXt-ce-1zs" firstAttribute="trailing" secondItem="GFT-vg-kC6" secondAttribute="trailing" constant="-10" id="qda-lt-os8"/>
                 <constraint firstItem="uCd-M4-WrA" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="GFT-vg-kC6" secondAttribute="trailing" constant="-50" id="uri-hR-g60"/>
                 <constraint firstItem="uCd-M4-WrA" firstAttribute="centerY" secondItem="11b-k2-Wwe" secondAttribute="centerY" id="yUv-Fb-h1x"/>

@@ -143,6 +143,8 @@ enum UserNetworkAPI {
     case searchUserCoupons(status: Int, pageNo: Int, pageSize: Int)
     case allDiscountProduct(promotionID: Int, productScope: Int, pageNo: Int, pageSize: Int)
     case couponInstruction
+    case getDiscountCoupons(productID: String, userCouponIDs: String)//确认订单页，获取打折券
+    case getConfirmOrderCoupons(productIDs: String, vipProductIDs: String)//确认订单页，优惠券列表
 }
 
 extension UserNetworkAPI: TargetType {
@@ -330,6 +332,10 @@ extension UserNetworkAPI: TargetType {
             return "/cei/save_order"
         case .saveNewWithoutVipOrder:
             return "/cei/save_order"
+        case .getDiscountCoupons:
+            return "/cei/search_product_user_discount_coupons"
+        case .getConfirmOrderCoupons:
+            return "/cei/search_order_user_coupons"
         }
     }
     
@@ -728,6 +734,12 @@ extension UserNetworkAPI: TargetType {
             break
         case .logoutAccount:
             break
+        case .getDiscountCoupons(let productID, let userCouponIDs):
+            dic["productID"] = productID
+            dic["userCouponIDs"] = userCouponIDs
+        case .getConfirmOrderCoupons(let productIDs, let vipProductIDs):
+            dic["productIDs"] = productIDs
+            dic["vipProductIDs"] = vipProductIDs
         }
         return dic
     }

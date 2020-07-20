@@ -56,7 +56,6 @@ class CartHelper: NSObject {
     }
     
     func loadData() {
-        
         UserHelper.shared.getCartList()
         .asObservable()
             .subscribe(onNext: {[weak self] (model) in
@@ -73,7 +72,6 @@ class CartHelper: NSObject {
 //                    self.goodsNumber.value = afterFilterArr.count
                     self.goodsNumber.value = cellModelArr.count
                 }
-
                 if let object = model.data.first {
                     self.learnCardAmount = object.totalAmount
                 }
@@ -120,12 +118,17 @@ class CartHelper: NSObject {
     }
     
     func updateTotalPrice() {
-        
-        var sumPrice = selectedArray.reduce(0) { (result, object) -> CGFloat in
-            return result + (object.count.cgFloat * object.price)
+        var sumPrice = selectedArray.reduce(0) { (result, object) -> NSDecimalNumber in
+            let objNum = NSDecimalNumber.init(value: object.count)
+            let objPrice = NSDecimalNumber.init(floatLiteral: Double(object.price))
+            let perTotalMoney = objNum.multiplying(by: objPrice)
+            let resultDecimal = result
+            let finalResult = resultDecimal.adding(perTotalMoney)
+            return finalResult
         }
-        totalPrice.value = sumPrice
-        finalPrice.value = sumPrice
+        let sumPriceString = "\(sumPrice)"
+        totalPrice.value = CGFloat(Double(sumPriceString) ?? 0)
+        finalPrice.value = CGFloat(Double(sumPriceString) ?? 0)
         print(sumPrice)
     }
     

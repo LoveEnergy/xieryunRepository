@@ -48,6 +48,7 @@ enum MyType {
     case jobFeedback
     case albumTest
     case myAccount
+    case memberPublicity
     
     var iconImage: UIImage? {
         switch self {
@@ -97,6 +98,8 @@ enum MyType {
         case .albumTest:
             return R.image.my_invoice()
         case .myAccount:
+            return R.image.my_invoice()
+        case .memberPublicity:
             return R.image.my_invoice()
         }
     }
@@ -148,6 +151,8 @@ enum MyType {
             return "相册"
         case .myAccount:
             return "我的账户"
+        case .memberPublicity:
+            return "宣传页"
         }
     }
     
@@ -265,6 +270,9 @@ enum MyType {
                 let vc = MyAccountViewController.init()
                 CurrentControllerHelper.pushViewController(viewController: vc)
             }
+        case .memberPublicity:
+            let vc = MemberPublicityViewController.init()
+            CurrentControllerHelper.pushViewController(viewController: vc)
         default:
             break
         }

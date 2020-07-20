@@ -513,6 +513,20 @@ class UserHelper: NSObject {
             .mapJSON()
             .asObservable().mapObject(type: BaseInfoModel<SumitOrderBaseInfo>.self)
     }
+    //确认订单页打折券
+    func getDiscountCoupon(productID: String, userCouponIDs: String) -> Observable<BaseListModel<DiscountCouponModel>>{
+        return provider.rx.request(UserNetworkAPI.getDiscountCoupons(productID: productID, userCouponIDs: userCouponIDs)).filterSuccessfulStatusCodes()
+            .mapJSON()
+            .asObservable()
+            .mapObject(type: BaseListModel<DiscountCouponModel>.self)
+    }
+    //确认订单页，优惠券列表
+    func getConfirmOrderCoupons(productIDs: String, vipProductIDs: String) -> Observable<BaseListModel<NewCouponList>>{
+        return provider.rx.request(UserNetworkAPI.getConfirmOrderCoupons(productIDs: productIDs, vipProductIDs: vipProductIDs)).filterSuccessfulStatusCodes()
+            .mapJSON()
+            .asObservable()
+            .mapObject(type: BaseListModel<NewCouponList>.self)
+       }
 }
 
 extension UserHelper {
@@ -902,6 +916,7 @@ class NewCouponList: NSObject, Mappable{
     var discountRate: CGFloat = 0.0//折扣率
     var crowdScope: Int = 0//人群适用范围(0.全部用户 1.新用户 2.VIP用户 3.指定用户)
     var validDate: Int = 0
+    var productID: Int = 0
     required init?(map: Map) {
     }
     
@@ -918,6 +933,7 @@ class NewCouponList: NSObject, Mappable{
         discountRate <- map["discountRate"]
         crowdScope <- map["crowdScope"]
         validDate <- map["validDate"]
+        productID <- map["productID"]
     }
 }
 
@@ -1028,3 +1044,18 @@ class CouponInstructionStringModel: NSObject, Mappable{
         instructions <- map["instructions"]
     }
 }
+
+class DiscountCouponModel: NSObject, Mappable{
+    var discountRate: CGFloat = 0.0
+    var userCouponID: Int = 0
+    
+    required init?(map: Map) {
+    }
+    
+    func mapping(map: Map) {
+        userCouponID <- map["userCouponID"]
+        discountRate <- map["discountRate"]
+    }
+}
+
+

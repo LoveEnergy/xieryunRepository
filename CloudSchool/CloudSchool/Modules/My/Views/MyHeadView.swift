@@ -19,6 +19,7 @@ class MyHeadView: UIView {
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var myVIPSign: UIImageView!
     @IBOutlet weak var yellowBGView: UIImageView!
+    @IBOutlet weak var vipBtn: UIButton!
     let disposeBag = DisposeBag()
     
     override init(frame: CGRect) {
@@ -47,7 +48,7 @@ class MyHeadView: UIView {
     func baseConfigure() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapView))
         self.addGestureRecognizer(tap)
-        
+        vipBtn.addTarget(self, action: #selector(vipBtnClick), for: .touchUpInside)
         LoginHelper.shared.currentUser
         .asObservable()
             .subscribe(onNext: {[weak self] (info) in
@@ -78,6 +79,13 @@ class MyHeadView: UIView {
     @objc func tapView() {
         LoginHelper.checkLoginStatus {
             let vc = R.storyboard.my.userInfoViewController()!
+            CurrentControllerHelper.pushViewController(viewController: vc)
+        }
+    }
+    
+    @objc func vipBtnClick(){
+        LoginHelper.checkLoginStatus {
+            let vc = MemberPublicityViewController.init()
             CurrentControllerHelper.pushViewController(viewController: vc)
         }
     }

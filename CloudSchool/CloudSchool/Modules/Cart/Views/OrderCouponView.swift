@@ -12,10 +12,12 @@ import RxCocoa
 
 class OrderCouponView: UIView {
     public var couponIDBlock:((String)->())?
+    public var selectCouponModel:((NewCouponList)->())?//选择的优惠券
     let disposeBag = DisposeBag()
     var products: [String] = [""]
     var selectedCoupon: Variable<(GoodsCouponModel, RuleModel)?> = Variable(nil)
     var totalPrice: CGFloat = 0.0
+    var cellArray: [NewCouponList] = [NewCouponList]()
     
     var titleLabel: UILabel = {
         let label = UILabel()
@@ -89,24 +91,41 @@ class OrderCouponView: UIView {
         self.addGestureRecognizer(tap)
         self.isUserInteractionEnabled = true
     }
+
+    lazy var productCouponListView : ProductCouponListView = {
+        var productCouponListView = ProductCouponListView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
+        productCouponListView.productCouponListViewDismissBlock = {
+            UIView.animate(withDuration: 0.15, animations: {
+                productCouponListView.alpha = 0
+            }) { (Bool) in
+                productCouponListView.removeFromSuperview()
+            }
+        }
+        productCouponListView.confirmControllerBool = true
+        productCouponListView.confirmOrderControllerNewCouponModelBlock = {(model) in
+            self.selectCouponModel?(model)
+        }
+        return productCouponListView
+    }()
     
     @objc func chooseCoupon() {
-        let list = CouponListView.loadXib()
-        list.productID = self.products
-        list.totalPrice = self.totalPrice
-        list.bottomPopShow()
-        list.selectedCoupon.asObservable().skip(1)
-            .subscribe(onNext: {[weak self] (value) in
-                guard let `self` = self else { return }
-                if let value = value {
-                    self.selectedCoupon.value = value
-                    self.detailLabel.text = value.0.getActivityString(rule: value.1)
-                    let couponModel: GoodsCouponModel = value.0
-                    self.couponIDBlock?("\(couponModel.promotionID)")
-                }
-                list.popDismiss()
-            })
-        .disposed(by: disposeBag)
+//        let list = CouponListView.loadXib()
+//        list.productID = self.products
+//        list.totalPrice = self.totalPrice
+//        list.bottomPopShow()
+//        list.selectedCoupon.asObservable().skip(1)
+//            .subscribe(onNext: {[weak self] (value) in
+//                guard let `self` = self else { return }
+//                if let value = value {
+//                    self.selectedCoupon.value = value
+//                    self.detailLabel.text = value.0.getActivityString(rule: value.1)
+//                    let couponModel: GoodsCouponModel = value.0
+//                    self.couponIDBlock?("\(couponModel.promotionID)")
+//                }
+//                list.popDismiss()
+//            })
+//        .disposed(by: disposeBag)
+        self.productCouponListView.showView()
     }
 
 }

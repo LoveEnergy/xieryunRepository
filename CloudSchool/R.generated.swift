@@ -279,7 +279,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 225 images.
+  /// This `R.image` struct is generated, and contains static references to 227 images.
   struct image {
     /// Image `AlivcVideoPalySelect`.
     static let alivcVideoPalySelect = Rswift.ImageResource(bundle: R.hostingBundle, name: "AlivcVideoPalySelect")
@@ -299,6 +299,8 @@ struct R: Rswift.Validatable {
     static let guideImageX3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "GuideImageX-3")
     /// Image `GuideImageX-4`.
     static let guideImageX4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "GuideImageX-4")
+    /// Image `MemberPublicity`.
+    static let memberPublicity = Rswift.ImageResource(bundle: R.hostingBundle, name: "MemberPublicity")
     /// Image `address_more`.
     static let address_more = Rswift.ImageResource(bundle: R.hostingBundle, name: "address_more")
     /// Image `alivcPlayThumb`.
@@ -551,6 +553,8 @@ struct R: Rswift.Validatable {
     static let login_sina = Rswift.ImageResource(bundle: R.hostingBundle, name: "login_sina")
     /// Image `login_wechat`.
     static let login_wechat = Rswift.ImageResource(bundle: R.hostingBundle, name: "login_wechat")
+    /// Image `member_ublicity_bottom`.
+    static let member_ublicity_bottom = Rswift.ImageResource(bundle: R.hostingBundle, name: "member_ublicity_bottom")
     /// Image `more_arrow`.
     static let more_arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "more_arrow")
     /// Image `my_account_bg`.
@@ -792,6 +796,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "GuideImageX-4", bundle: ..., traitCollection: ...)`
     static func guideImageX4(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.guideImageX4, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "MemberPublicity", bundle: ..., traitCollection: ...)`
+    static func memberPublicity(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.memberPublicity, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1674,6 +1685,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "login_wechat", bundle: ..., traitCollection: ...)`
     static func login_wechat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.login_wechat, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "member_ublicity_bottom", bundle: ..., traitCollection: ...)`
+    static func member_ublicity_bottom(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.member_ublicity_bottom, compatibleWith: traitCollection)
     }
     #endif
 

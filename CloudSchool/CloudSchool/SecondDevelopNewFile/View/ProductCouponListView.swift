@@ -13,7 +13,9 @@ import Segmentio
 
 class ProductCouponListView: UIView {
     let disposeBag: DisposeBag = DisposeBag()
+    public var confirmOrderControllerNewCouponModelBlock:((NewCouponList)->())?
     public var productCouponListViewDismissBlock:(()->())?//消失
+    var confirmControllerBool: Bool = false //判断是否从确认订单页来
     var array : [NewCouponList] = [NewCouponList]()
     lazy var tableView : UITableView = {
         var tableViewY = 180/WIDTH_6_SCALE
@@ -90,19 +92,25 @@ extension ProductCouponListView{
 extension ProductCouponListView : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : ProductCouponListViewTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(ProductCouponListViewTableViewCell.self)) as! ProductCouponListViewTableViewCell
-        cell.couponListModel = self.array[indexPath.row]
+        if self.confirmControllerBool == false {
+            cell.couponListModel = self.array[indexPath.row]
+        }else{
+            cell.confirmCouponListModel = self.array[indexPath.row]
+        }
         cell.couponBtnClickBlock = {
-            HUD.loading(text: "")
-            UserHelper.shared.saveUserCoupon(promotionCouponDetialID: self.array[indexPath.row].promotionCouponDetialID).asObservable() .subscribe(onNext: {[weak self] (list) in
-                HUD.hideLoading()
-                guard let `self` = self else { return }
-                let baseModel: BaseModel = list
-                if baseModel.code == 200{
-                    HUD.showText(text: "领取成功")
-                }else{
-                    HUD.showError(error: baseModel.message!)
-                }
-            }).disposed(by: self.disposeBag)
+            if self.confirmControllerBool == false {
+                HUD.loading(text: "")
+                UserHelper.shared.saveUserCoupon(promotionCouponDetialID: self.array[indexPath.row].promotionCouponDetialID).asObservable() .subscribe(onNext: {[weak self] (list) in
+                    HUD.hideLoading()
+                    guard let `self` = self else { return }
+                    let baseModel: BaseModel = list
+                    if baseModel.code == 200{
+                        HUD.showText(text: "领取成功")
+                    }else{
+                        HUD.showError(error: baseModel.message!)
+                    }
+                }).disposed(by: self.disposeBag)
+            }
         }
         return cell
     }
@@ -113,6 +121,8 @@ extension ProductCouponListView : UITableViewDelegate, UITableViewDataSource{
         return array.count
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if self.confirmControllerBool == true {
+            self.confirmOrderControllerNewCouponModelBlock?(self.array[indexPath.row])
+        }
     }
 }

@@ -145,6 +145,78 @@ class ProductCouponListViewTableViewCell: UITableViewCell {
         }
     }
     
+    var confirmCouponListModel: NewCouponList?{
+        didSet{
+            guard let couponListModel = confirmCouponListModel else { return }
+            self.fullLab.isHidden = false
+            let userType = couponListModel.crowdScope
+            if userType == 2 {
+                bgView.image = UIImage.init(named: "coupon_vip_unused_bg")
+            }else{
+                bgView.image = UIImage.init(named: "coupon_usual_unused_bg")
+            }
+            var productScopeString = ""
+            var couponTypeString = ""
+            if couponListModel.productScope == 0 {
+                productScopeString = "全部品类"
+            }
+            if couponListModel.productScope == 1 {
+                productScopeString = "课程"
+            }
+            if couponListModel.productScope == 2 {
+                productScopeString = "书籍"
+            }
+            if couponListModel.productScope == 3 {
+                productScopeString = "班级"
+            }
+            if couponListModel.productScope == 4 {
+                productScopeString = "直播"
+            }
+            if couponListModel.productScope == 5 {
+                productScopeString = "书籍"
+            }
+            if couponListModel.productScope == 6 {
+                productScopeString = "指定产品"
+            }
+            if couponListModel.couponType == 0 {//人群适用范围(0.全部用户 1.新用户 2.VIP用户 3.指定用户)
+                couponTypeString = "全部用户"
+            }
+            if couponListModel.couponType == 1 {//人群适用范围(0.全部用户 1.新用户 2.VIP用户 3.指定用户)
+                couponTypeString = "新用户"
+            }
+            if couponListModel.couponType == 2 {//人群适用范围(0.全部用户 1.新用户 2.VIP用户 3.指定用户)
+                couponTypeString = "VIP用户"
+            }
+            if couponListModel.couponType == 3 {//人群适用范围(0.全部用户 1.新用户 2.VIP用户 3.指定用户)
+                couponTypeString = "指定用户"
+            }
+            self.titleLab.text = "\(productScopeString)\(couponTypeString)"
+            self.dateLab.text = "\(couponListModel.receiveStartTime) - \(couponListModel.receiveEndTime)"
+            self.lastDayLab.text = "仅剩\(couponListModel.validDate)天"
+            if couponListModel.couponType == 1 {
+                self.reduceLab.text = "￥\(couponListModel.reductionPrice)"//减去的价格
+                self.fullLab.text = "满\(couponListModel.totalPrice)元可用"//总价
+                self.changeLabelTextFont(label: self.reduceLab, ranStr: "\(couponListModel.reductionPrice)")
+            }
+            if couponListModel.couponType == 2 {
+                self.fullLab.isHidden = true
+                self.reduceLab.text = "￥\(couponListModel.reductionPrice)"//代金券
+                self.changeLabelTextFont(label: self.reduceLab, ranStr: "\(couponListModel.reductionPrice)")
+            }
+            if couponListModel.couponType == 3 {
+                self.reduceLab.text = "\(couponListModel.discountRate)折"//折扣
+                self.fullLab.text = "满\(couponListModel.totalPrice)元可用"//总价
+                self.changeLabelTextFont(label: self.reduceLab, ranStr: "\(couponListModel.discountRate)")
+            }
+            if couponListModel.couponType == 4 {
+                self.reduceLab.text = "￥0"//包邮券
+                self.fullLab.text = "运费"
+                self.changeLabelTextFont(label: self.reduceLab, ranStr: "0")
+            }
+            
+        }
+    }
+    
     lazy var fullLab : UILabel = {[weak self] in
         var fullLab = UILabel.init(frame: CGRect(x: (self?.reduceLab.left)!, y: (self?.reduceLab.bottom)! + 5/WIDTH_6_SCALE, width: (self?.reduceLab.width)!, height: 12/WIDTH_6_SCALE))
         fullLab.centerY = self!.bgView.centerY

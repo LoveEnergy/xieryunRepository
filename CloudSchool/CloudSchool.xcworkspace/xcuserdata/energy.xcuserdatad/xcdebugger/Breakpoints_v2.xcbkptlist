@@ -67,78 +67,94 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E48820B9-C70F-479C-9DDB-B2D469DFB07B"
+            uuid = "92E073E2-315D-439A-86EB-ECC8CD9E09AD"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CloudSchool/Modules/Home/CourseDetailViewController.swift"
+            filePath = "CloudSchool/Modules/Cart/ViewControllers/ConfirmOrderViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "945"
-            endingLineNumber = "945"
-            landmarkName = "upgradeBtnClick(btn:)"
+            startingLineNumber = "361"
+            endingLineNumber = "361"
+            landmarkName = "tableView"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F0E479D0-EDF8-4017-AE19-F27A883453CD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CloudSchool/Modules/Cart/Views/OrderCouponView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "productCouponListView"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "79F7F6B4-E080-4899-9EC3-8D3EEF602FF8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CloudSchool/SecondDevelopNewFile/View/ConfirmOrderTableView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2D82AC21-A899-400E-B06E-FE873F604D2A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CloudSchool/Modules/Home/CourseDetailViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1100"
-            endingLineNumber = "1100"
-            landmarkName = "submitFreeOrder()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4AF5F506-E063-4E57-B8BF-08EFFAD3A461"
+            uuid = "ECF3DC42-449A-4924-9C15-4CE2AB5EBCE9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CloudSchool/Modules/Home/CourseDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1167"
-            endingLineNumber = "1167"
-            landmarkName = "submitSchoolRollData(submitName:)"
+            startingLineNumber = "1120"
+            endingLineNumber = "1120"
+            landmarkName = "submitFreeOrder()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "4AF5F506-E063-4E57-B8BF-08EFFAD3A461 - 6ded6b4a5586146a"
+                  uuid = "ECF3DC42-449A-4924-9C15-4CE2AB5EBCE9 - a3b1f9f49ded72db"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (CloudSchool.BaseModel) -&gt; () in CloudSchool.CourseDetailViewController.submitSchoolRollData(submitName: Swift.String) -&gt; ()"
+                  symbolName = "CloudSchool.CourseDetailViewController.submitFreeOrder() -&gt; ()"
                   moduleName = "CloudSchool"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/energy/Desktop/CloudSchool/CloudSchool/Modules/Home/CourseDetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1167"
-                  endingLineNumber = "1167"
-                  offsetFromSymbolStart = "3052">
+                  startingLineNumber = "1120"
+                  endingLineNumber = "1120"
+                  offsetFromSymbolStart = "1264">
                </Location>
                <Location
-                  uuid = "4AF5F506-E063-4E57-B8BF-08EFFAD3A461 - f21ecc2e539c4654"
+                  uuid = "ECF3DC42-449A-4924-9C15-4CE2AB5EBCE9 - cdf73a93a4ecfa04"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (CloudSchool.BaseInfoModel&lt;CloudSchool.SumitOrderBaseInfo&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (CloudSchool.BaseModel) -&gt; () in CloudSchool.CourseDetailViewController.submitSchoolRollData(submitName: Swift.String) -&gt; ()"
+                  symbolName = "closure #1 (CloudSchool.BaseInfoModel&lt;CloudSchool.SumitOrderBaseInfo&gt;) -&gt; () in CloudSchool.CourseDetailViewController.submitFreeOrder() -&gt; ()"
                   moduleName = "CloudSchool"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/energy/Desktop/CloudSchool/CloudSchool/Modules/Home/CourseDetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1168"
-                  endingLineNumber = "1168"
+                  startingLineNumber = "1121"
+                  endingLineNumber = "1121"
                   offsetFromSymbolStart = "104">
                </Location>
             </Locations>
@@ -147,80 +163,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E59F3CE8-97BF-483E-B08A-1297558D19F5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CloudSchool/SecondDevelopNewFile/View/cell/ConfirmOrderTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "numberTextField"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EA8B7358-D953-4EC4-8718-D9BADACC4388"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CloudSchool/Modules/Cart/ViewControllers/ConfirmOrderViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "522"
-            endingLineNumber = "522"
-            landmarkName = "submitOrdinaryOrder()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8B21FFA1-4761-492B-BE87-4195ED75E434"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CloudSchool/Modules/Cart/ViewControllers/ConfirmOrderViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "configureViews()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0E92FB60-B7D1-4508-9304-34450186D6D7"
+            uuid = "13849AA4-5E20-4A57-A2A1-38D373B9DE9F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CloudSchool/Modules/Cart/ViewControllers/ConfirmOrderViewController.swift"
+            filePath = "CloudSchool/Modules/Home/CourseDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "828"
-            endingLineNumber = "828"
-            landmarkName = "discountTypeChooseClick(btn:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DDAD2010-9C11-464A-9ACF-08CD5C4D1062"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CloudSchool/Modules/Cart/ViewControllers/ConfirmOrderViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "835"
-            endingLineNumber = "835"
-            landmarkName = "discountTypeChooseClick(btn:)"
+            startingLineNumber = "1033"
+            endingLineNumber = "1033"
+            landmarkName = "liveClassLeftBtnClick(btn:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

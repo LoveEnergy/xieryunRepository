@@ -100,6 +100,10 @@ class CartGoodsModel: NSObject, Mappable {
     var applePayID: String = ""
     var isStudyCardPay: Int = 0//0 不可用  1 可以用
     var vipPrice: CGFloat = 0.0
+    var discountCouponRate: CGFloat = 0.0//打折
+    var userCouponID: Int = 0//用户打折券ID
+    var selectCoupon: Int = 0//自己添加的字段，用来判断选择的优惠券，0为未选择，1为已选择
+    var showCouponBtn: Int = 0//判断是不是显示使用优惠券选择按钮，0为不显示，1为显示
     required init?(map: Map) {
     }
     
@@ -119,6 +123,10 @@ class CartGoodsModel: NSObject, Mappable {
         applePayID <- map["applePayID"]
         isStudyCardPay <- map["isStudyCardPay"]
         vipPrice <- map["vipPrice"]
+        discountCouponRate <- map["discountCouponRate"]
+        userCouponID <- map["userCouponID"]
+        selectCoupon <- map["selectCoupon"]
+        showCouponBtn <- map["showCouponBtn"]
     }
 }
 

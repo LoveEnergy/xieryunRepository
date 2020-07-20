@@ -135,6 +135,10 @@ class CourseDetailViewController: UIViewController, UINavigationControllerDelega
                 CurrentControllerHelper.presentViewController(viewController: loginVC)
             }
         }
+        self.bottomView.goForStudyBlock = {
+            //免费学习
+            self.submitFreeOrder()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -463,6 +467,14 @@ class CourseDetailViewController: UIViewController, UINavigationControllerDelega
                 }else{
                     self.bottomView.vipBuyBtn.setTitle("VIP购买", for: .normal)
                     self.bottomView.vipBuyBtn.tag = 1002//标签点击事件判断用
+                    if model.productType == 2 {
+                        self.bottomView.addTocartBtn.isHidden = false
+                        self.bottomView.buyRightNowBtn.isHidden = true
+                        self.bottomView.addTocartBtn.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH/2, height: self.bottomView.height)
+                        self.bottomView.vipBuyBtn.frame = CGRect(x: self.bottomView.addTocartBtn.right, y: 0, width: self.bottomView.addTocartBtn.width, height: self.bottomView.addTocartBtn.height)
+                        self.bottomView.addTocartBtn.layer.cornerRadius = 0
+                        self.bottomView.addTocartBtn.layer.masksToBounds = false
+                    }
                 }
             }
         }
@@ -563,15 +575,15 @@ class CourseDetailViewController: UIViewController, UINavigationControllerDelega
                 self.offlineClassBuyBtn.isUserInteractionEnabled = false
             }
         }
-        //以下能用到本页的upgradeBtn按钮
+        //以下能用到本类的upgradeBtn按钮
         self.upgradeBtn.setTitle("升级VIP会员", for: .normal)
         self.upgradeBtn.isHidden = true
         if productType == 1 || productType == 3 || productType == 5 {
             if productType == 3 {
-                if model.basicPrice == 0.0 {
-                    self.goForCardActiveBtnStatus = 2
-                }else{
+                if model.isPay == 0 {//未支付
                     self.goForCardActiveBtnStatus = 0
+                }else{
+                    self.goForCardActiveBtnStatus = 2
                 }
                 if model.isStudy == 1 {
                     self.view.addSubview(self.goForCardActiveBtn)
@@ -939,6 +951,8 @@ class CourseDetailViewController: UIViewController, UINavigationControllerDelega
     
     @objc func vipNextBtnClick(){
         print("VIP页面跳转")
+        let vc = MemberPublicityViewController.init()
+        CurrentControllerHelper.pushViewController(viewController: vc)
     }
     
     @objc func upgradeBtnClick(btn: UIButton){
@@ -1097,6 +1111,10 @@ class CourseDetailViewController: UIViewController, UINavigationControllerDelega
     @objc func submitFreeOrder(){
         var array : [SubmitOrderGoodsNewWithoutVIPModel] = []
         let arrayModel = SubmitOrderGoodsNewWithoutVIPModel(JSONString: self.model?.toJSONString() ?? "")
+        if self.isMember == 1 {
+            arrayModel?.price = 0
+            self.model!.price = 0
+        }
         array.append(arrayModel!)
         HUD.loading(text: "")
         UserHelper.shared.saveNewOrderWithoutVip(isGroup: self.productGroupType, addressID: "", discountPrice: "\(self.model!.price)", distributionMode: 1, rulesIDs: "", productType: self.model!.productType, totalPrice: "\(self.model!.price)", invitationCode: "\(self.inviteCode ?? "")", payChannel: 3, productList: array, invoiceID: 0, trafficPay:  "0", couponIDs: "", payMode: "0", recommenderName: "").asObservable().subscribe(onNext: { (result) in
@@ -1378,17 +1396,6 @@ extension CourseDetailViewController: UITableViewDataSource, UITableViewDelegate
             cell.goodsCouponBlock = {
                 let productCouponListView = ProductCouponListView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
                 productCouponListView.showView()
-//                let tempArr : [ActivityModel] = self.model!.couponList
-//                var couponListArr: [RuleModel] = [RuleModel]()
-//                for num in 0...tempArr.count - 1{
-//                    let couponListArrModel = tempArr[num]
-//                    var tempModelArr: [RuleModel] = [RuleModel]()
-//                    for singleModel in couponListArrModel.ruleList {
-//                        singleModel.ruleType = couponListArrModel.ruleType
-//                        tempModelArr.append(singleModel)
-//                    }
-//                    couponListArr = couponListArr + tempModelArr
-//                }
                 productCouponListView.array = self.couponListArray
                 productCouponListView.productCouponListViewDismissBlock = {
                     UIView.animate(withDuration: 0.15, animations: {

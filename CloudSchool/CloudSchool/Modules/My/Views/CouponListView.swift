@@ -37,6 +37,7 @@ class CouponListView: UIView, BottomPopable, XibLoadable {
         tableView.isProduct = true
         baseConfigure()
         loadData()
+        tableView.backgroundColor = .red
     }
     
     func baseConfigure() {
@@ -54,10 +55,11 @@ class CouponListView: UIView, BottomPopable, XibLoadable {
             .subscribe(onNext: {[weak self] (value) in
                 guard let `self` = self else { return }
                 self.selectedCoupon.value = value
-                
 //                self.closeClick()
             })
         .disposed(by: disposeBag)
+        
+        
     }
     
 }

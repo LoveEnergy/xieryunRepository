@@ -12,11 +12,11 @@ import RxSwift
 import RxCocoa
 
 class ConfirmOrderTableViewCell: UITableViewCell {
+    var showVipCouponChooseBtnBool: Bool = true
     var pageFromName: String = ""
     public var changeGoodsNumBlock:((Int)->())?//选择商品数量
     public var chooseCouponListViewBlock:(()->())?
     lazy var numberContainerView : UIView = {
-//        var numberContainerView = UIView.init(frame: CGRect(x: SCREEN_WIDTH - 88.5/WIDTH_6_SCALE - 17.5/WIDTH_6_SCALE, y: 56/WIDTH_6_SCALE, width: 88.5/WIDTH_6_SCALE, height: 20/WIDTH_6_SCALE))
         let viewW = 48.5/WIDTH_6_SCALE
         var numberContainerView = UIView.init(frame: CGRect(x: SCREEN_WIDTH - viewW - 20/WIDTH_6_SCALE, y: 56/WIDTH_6_SCALE, width: viewW, height: 32.5/WIDTH_6_SCALE))
         numberContainerView.backgroundColor = UIColor.clear
@@ -28,7 +28,6 @@ class ConfirmOrderTableViewCell: UITableViewCell {
         return thumbImageView
     }()
     lazy var numberTextField : UITextField = {
-//        var numberTextField = UITextField.init(frame: CGRect(x: self.minusButton.right + 8/WIDTH_6_SCALE, y: 0, width: 32.5/WIDTH_6_SCALE, height: self.numberContainerView.height))
         var numberTextField = UITextField.init(frame: CGRect(x: 0, y: 0, width: self.numberContainerView.width, height: self.numberContainerView.height))
         numberTextField.backgroundColor = UIColor.colorWithHex(hex: "F5F5F5")
         numberTextField.textAlignment = .center
@@ -55,9 +54,8 @@ class ConfirmOrderTableViewCell: UITableViewCell {
         return minusButton
     }()
     lazy var priceLabel : UILabel = {
-//        var priceLabel = UILabel.init(frame: CGRect(x: 14/WIDTH_6_SCALE + self.thumbImageView.right, y: self.thumbImageView.bottom - 20/WIDTH_6_SCALE, width: SCREEN_WIDTH - self.numberContainerView.width - 10/WIDTH_6_SCALE - self.thumbImageView.left - 20/WIDTH_6_SCALE, height: 18/WIDTH_6_SCALE))
         var priceLabel = UILabel.init(frame: CGRect(x: self.numberContainerView.left - 100/WIDTH_6_SCALE, y: self.thumbImageView.bottom - 20/WIDTH_6_SCALE, width: 80/WIDTH_6_SCALE, height: 18/WIDTH_6_SCALE))
-        priceLabel.font = DEF_FontSize_18
+        priceLabel.font = DEF_FontSize_16
         priceLabel.backgroundColor = .clear
         priceLabel.textColor = UIColor.colorWithHex(hex: "FF3333")
         priceLabel.textAlignment = .right
@@ -77,7 +75,7 @@ class ConfirmOrderTableViewCell: UITableViewCell {
     }()
     
     lazy var couponChooseBtn : UIButton = {
-        var couponChooseBtn = UIButton.init(frame: CGRect(x: self.nameLabel.left, y: 0, width: 100/WIDTH_6_SCALE, height: 25/WIDTH_6_SCALE))
+        var couponChooseBtn = UIButton.init(frame: CGRect(x: self.nameLabel.left, y: 0, width: 120/WIDTH_6_SCALE, height: 25/WIDTH_6_SCALE))
         couponChooseBtn.centerY = self.priceLabel.centerY
         couponChooseBtn.setTitle("不使用优惠券", for: .normal)
         couponChooseBtn.setTitleColor(UIColor.black, for: .normal)
@@ -147,6 +145,11 @@ class ConfirmOrderTableViewCell: UITableViewCell {
     
     func configure(model: CartGoodsModel) {
         self.model = model
+        if model.discountCouponRate == 0 {
+            self.couponChooseBtn.setTitle("不使用优惠券", for: .normal)
+        }else{
+            self.couponChooseBtn.setTitle("\(model.discountCouponRate)折优惠", for: .normal)
+        }
         model.isChoosed.asObservable()
             .subscribe(onNext: {[weak self] (value) in
                 guard let `self` = self else { return }
@@ -158,7 +161,7 @@ class ConfirmOrderTableViewCell: UITableViewCell {
         nameLabel.text = model.productName
         numberTextField.text = "*\(model.count.toString())"
         if model.type == 1{
-            priceLabel.text = "学点\(model.applePrice.toString())"
+            priceLabel.text = "学点\(model.price.toString())"
             if self.pageFromName == "cartViewController" {
                 priceLabel.text = "学点\(model.price.toString())"
             }

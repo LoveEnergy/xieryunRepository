@@ -15,6 +15,7 @@ class GoodsDetailBottomView: UIView {
     public var alertViewBlock:(()->())?//弹出游客登录提示
     public var showMessageBlock:((String)->())?
     public var goForActiveClassBlock:(()->())?//前去开课
+    public var goForStudyBlock:(()->())?//前去学习
 //    public var vipBuyBlock:(()->())?//VIP购买
 //    public var buyOnlineClassBlock:(()->())?//购买线上课程
     let disposeBag: DisposeBag = DisposeBag()
@@ -326,6 +327,13 @@ class GoodsDetailBottomView: UIView {
         if btn.tag == 1002 {
 //            self.vipBuyBlock?()
             self.buyGoods()
+        }
+        if btn.tag == 1000{
+            let vc = MemberPublicityViewController.init()
+            CurrentControllerHelper.pushViewController(viewController: vc)
+        }
+        if btn.tag == 1001 {
+            self.goForStudyBlock?()
         }
     }
 }

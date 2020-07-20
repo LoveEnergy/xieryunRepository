@@ -135,7 +135,7 @@ class CartBottomView: UIView {
                 return "总价：¥\(value)"
         }.bind(to: totalPriceLabel.rx.text)
         .disposed(by: disposeBag)
-        
+
         
         CartHelper.shared.finalPrice
             .asObservable()
@@ -165,8 +165,11 @@ class CartBottomView: UIView {
         var productTypeArr: [Int] = [Int]()
         for num in 0...vc.selectedArray.count - 1 {
             productTypeArr.append(vc.selectedArray[num].productType)
+            if vc.selectedArray[num].isStudyCardPay == 0 {
+                vc.isStudyCardPay = 0
+            }
         }
-        for item in 0...productTypeArr.count {
+        for item in 0...productTypeArr.count - 1 {
             if productTypeArr[item] != productTypeArr[0] {
                 HUD.showError(error: "线上课程与其他商品不能同时购买")
                 return

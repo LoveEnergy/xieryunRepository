@@ -386,6 +386,7 @@
 		6D207E7223E1697200CD84A6 /* Extension + Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D207E7123E1697200CD84A6 /* Extension + Array.swift */; };
 		6D2140C0246652240018C1CB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2140BF246652240018C1CB /* CoreTelephony.framework */; };
 		6D2140C2246652490018C1CB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2140C1246652490018C1CB /* SystemConfiguration.framework */; };
+		6D221EC224C28EE100303EF7 /* MemberPublicityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D221EC124C28EE100303EF7 /* MemberPublicityViewController.swift */; };
 		6D23F88723FCE35A0098D630 /* IMLiveMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D23F88623FCE35A0098D630 /* IMLiveMessageTableViewCell.swift */; };
 		6D23F88923FCF9AF0098D630 /* IMCustomOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D23F88823FCF9AF0098D630 /* IMCustomOptionView.swift */; };
 		6D2CF65D2489F83700D5C2C9 /* OpenPushWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2CF65C2489F83700D5C2C9 /* OpenPushWebViewController.swift */; };
@@ -998,6 +999,7 @@
 		6D207E7123E1697200CD84A6 /* Extension + Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Array.swift"; sourceTree = "<group>"; };
 		6D2140BF246652240018C1CB /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		6D2140C1246652490018C1CB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6D221EC124C28EE100303EF7 /* MemberPublicityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberPublicityViewController.swift; sourceTree = "<group>"; };
 		6D23F88623FCE35A0098D630 /* IMLiveMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMLiveMessageTableViewCell.swift; sourceTree = "<group>"; };
 		6D23F88823FCF9AF0098D630 /* IMCustomOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMCustomOptionView.swift; sourceTree = "<group>"; };
 		6D2CF65C2489F83700D5C2C9 /* OpenPushWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPushWebViewController.swift; sourceTree = "<group>"; };
@@ -1765,6 +1767,8 @@
 		36A2B70A2178D225008A8FC6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				362DDD3521A6DAD600FB0672 /* CouponListView.swift */,
+				362DDD3721A6DB1E00FB0672 /* CouponListView.xib */,
 				36D7FA1B223AAB8300E6BA3F /* OrderListTableView.swift */,
 				36EA741621A023BD00871F27 /* OrderTableViewCell.swift */,
 				36EA741721A023BD00871F27 /* OrderTableViewCell.xib */,
@@ -1803,8 +1807,6 @@
 				36C1FBAF22427EE100E75122 /* CourseCardTableViewCell.xib */,
 				36391374225CE8D500DDA9FF /* ProfitTableViewCell.swift */,
 				36391375225CE8D500DDA9FF /* ProfitTableViewCell.xib */,
-				362DDD3521A6DAD600FB0672 /* CouponListView.swift */,
-				362DDD3721A6DB1E00FB0672 /* CouponListView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1859,7 +1861,6 @@
 				36EF0AAA21BD2EB900C96A4B /* CartTableViewCell.xib */,
 				3626F3D321CC90A600CFF87D /* OrderUserInfoView.swift */,
 				3626F3D521CC93F900CFF87D /* OrderAddressView.swift */,
-				3626F3DB21CCC53300CFF87D /* OrderCouponView.swift */,
 				3626F3DD21CCC5FE00CFF87D /* OrderPriceDetailView.swift */,
 				36901ED02245C1AB00F1B3C9 /* OrderLearnCardView.swift */,
 				36F62E4721FF58E700F8BED0 /* GoodsTableView.swift */,
@@ -1868,6 +1869,7 @@
 				36A54006218827E500327A4B /* GoodsDetailBottomView.swift */,
 				36A54008218827EE00327A4B /* GoodsDetailBottomView.xib */,
 				3626F3D921CCBB4F00CFF87D /* OrderInvoiceView.swift */,
+				3626F3DB21CCC53300CFF87D /* OrderCouponView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2257,6 +2259,14 @@
 				6DFA2AA824138B600068F526 /* Extension + UIButton.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		6D221EC024C28EA900303EF7 /* MemberPublicity */ = {
+			isa = PBXGroup;
+			children = (
+				6D221EC124C28EE100303EF7 /* MemberPublicityViewController.swift */,
+			);
+			path = MemberPublicity;
 			sourceTree = "<group>";
 		};
 		6D2CF65B2489F81800D5C2C9 /* OpenPushWeb */ = {
@@ -3193,6 +3203,7 @@
 		6DA10CED23C8482F0095F971 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6D221EC024C28EA900303EF7 /* MemberPublicity */,
 				6DF0239124B567FB00CD67D2 /* CouponInstruction */,
 				6DF0238C24B4475700CD67D2 /* DiscountProduct */,
 				6DF8B9DA24A9B48300644674 /* BuyOnlineClass */,
@@ -3822,6 +3833,7 @@
 				36B0958521D9E8BC002764D5 /* ProvinceModel.swift in Sources */,
 				365FC1CC219808EB00116F88 /* BaseActionSheetView.swift in Sources */,
 				6DE8098024AD88870000B3B3 /* BuyOnlineClassTableViewCell.swift in Sources */,
+				6D221EC224C28EE100303EF7 /* MemberPublicityViewController.swift in Sources */,
 				6D8092E723F63DFC00DE4A42 /* EMAudioPlayerUtil.m in Sources */,
 				36E1AE3321B11E4A00F38220 /* NewsTableViewCell.swift in Sources */,
 				6DF8B9DC24A9B4B700644674 /* BuyOnlineClassViewController.swift in Sources */,

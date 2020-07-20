@@ -12,7 +12,7 @@ class ConfirmOrderTableView: UITableView {
     
     var controllerFromName: String = ""
     var showCouponSign: Bool = true//true显示优惠券   false隐藏优惠券
-    public var showCouponListViewBlock:((ConfirmOrderTableViewCell)->())?
+    public var showCouponListViewBlock:((ConfirmOrderTableViewCell, Int, Int)->())?//第一个参数：获取cell的位置用，第二个参数：产品ID， 第三个参数：indexpath
     public var goodsViewChangeGoodsNum:((Int, Int)->())?
     var data: [CartGoodsModel] = [] {
         didSet {
@@ -62,6 +62,9 @@ extension ConfirmOrderTableView: UITableViewDelegate, UITableViewDataSource {
         weak var weakSelf = self
         let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(ConfirmOrderTableViewCell.self), for: indexPath) as! ConfirmOrderTableViewCell
         cell.pageFromName = self.controllerFromName
+//        if self.data.count > 1 {
+//            cell.showVipCouponChooseBtnBool = false
+//        }
         cell.configure(model: data[indexPath.row])
         cell.changeGoodsNumBlock = {(goodsNum: Int) in
             weakSelf?.goodsViewChangeGoodsNum!(goodsNum, indexPath.row)
@@ -70,13 +73,21 @@ extension ConfirmOrderTableView: UITableViewDelegate, UITableViewDataSource {
         cell.minusButton.isHidden = true
         cell.numberTextField.isUserInteractionEnabled = false
         cell.chooseCouponListViewBlock = {()
-            self.showCouponListViewBlock?(cell)
+            self.showCouponListViewBlock?(cell, self.data[indexPath.row].productID, indexPath.row)
         }
-        if self.showCouponSign == true {
-            cell.couponChooseBtn.isHidden = false
-        }else{
+        if self.data.count > 1 {
             cell.couponChooseBtn.isHidden = true
+            if self.showCouponSign == true && data[indexPath.row].vipPrice < 0 {
+                cell.couponChooseBtn.isHidden = false
+            }
+        }else{
+            if self.showCouponSign == true {
+                cell.couponChooseBtn.isHidden = false
+            }else{
+                cell.couponChooseBtn.isHidden = true
+            }
         }
+        
         return cell
     }
     

@@ -40,7 +40,7 @@ class BaseNavigationViewController: UINavigationController, UINavigationControll
             lastVC.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         }
         interactivePopGestureRecognizer?.isEnabled = true
-        push()
+//        push()
 //        super.pushViewController(viewController, animated: true)
         super.pushViewController(viewController, animated: animated)
     }

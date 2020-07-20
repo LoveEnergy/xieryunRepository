@@ -66,7 +66,7 @@ class GoodsDetailInforNewTableViewCell: UITableViewCell {
                 self.teacherTitleLab.text = "教师:\(model.teacherName)"
             }
             if let shareModel = model.activityMap, let _ = shareModel.activityCategoryName.emptyToNil() {
-                if model.vipPrice <= 0{
+                if model.vipPrice < 0{
                     self.setUpUIWithMoneyShare()
                 }else{
                     self.setUpUIWithMoneyShareWithVIPPrice()
@@ -80,7 +80,7 @@ class GoodsDetailInforNewTableViewCell: UITableViewCell {
                 self.describeLab.centerX = self.moneyImgView.centerX
                 self.shareGetMoneyBtn.frame = CGRect(x: self.describeLab.left, y: self.moneyImgView.top, width: self.describeLab.width, height: self.deadlineLab.bottom)
             } else {
-                if model.vipPrice <= 0 {
+                if model.vipPrice < 0 {
                     self.setUpNoneCharacterViewUI()
                 }else{
                     self.setUpNoneCharacterWithVIPPriceViewUI()

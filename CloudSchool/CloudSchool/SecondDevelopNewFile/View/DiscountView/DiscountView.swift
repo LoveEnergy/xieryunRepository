@@ -9,6 +9,8 @@
 import UIKit
 
 class DiscountView: UIView {
+    var cellArray: [DiscountCouponModel]?
+    public var chooseDiscountCoupon:((Int, [DiscountCouponModel])->())?//选择优惠券
     public var dismissDiscountViewBlock:(()->())?
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,8 +51,12 @@ extension DiscountView{
         self.dismissDiscountViewBlock?()
     }
     
-    func showView(frame: CGRect){
-        self.tableView.frame = CGRect(x: 100, y: frame.maxY, width: 100, height: 200)
+    func showView(frame: CGRect, array: [DiscountCouponModel]){
+        self.tableView.frame = CGRect(x: frame.minX, y: frame.maxY, width: 120/WIDTH_6_SCALE, height: CGFloat(array.count * 25)/WIDTH_6_SCALE)
+        self.cellArray?.removeAll()
+//        self.cellArray = array
+        self.cellArray = array
+        self.tableView.reloadData()
         //获取delegate
         let delegate  = UIApplication.shared.delegate as! AppDelegate
         //添加视图
@@ -67,15 +73,16 @@ extension DiscountView{
 
 extension DiscountView: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return self.cellArray?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: DiscountViewTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(DiscountViewTableViewCell.self)) as! DiscountViewTableViewCell
+        cell.model = self.cellArray![indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.dismissView()
+        self.chooseDiscountCoupon?(indexPath.row, self.cellArray!)
     }
 }
